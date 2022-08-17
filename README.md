@@ -10,14 +10,14 @@ Using an oustanding dataset from Zillow, the firm hired me to answer those quest
 
 The predicted highest performing zip codes in the next 5 years( May 2018 to March 2023) **were 10590, 10553, 11804,  10536, and 10504**.  However, the RMSE for each is very high, the confidence intervals are very wide, and the predicted values differ greatly from the test data. The differences are wide but may be a product of the Great Financial Crash and the disruption that event caused in the real estate market.
 
-#
-BUSINESS UNDERSTANDING
+
+# BUSINESS UNDERSTANDING
 
 The New York City area real estate market is perhaps the most valuable in the country and is among the most valuable in the world. According to Statista(https://www.statista.com/statistics/815095/new-york-metro-area-population/) , the combined population of the New York metropolitan area is almost 20 million people. When people think of the New York area, they often only think of the city proper consisting of the 5 boroughs of the Bronx, Manhattan, Queens, Brooklyn, and Staten Island. The city's fabled real estate market is lucrative but it’s important for investors to look beyond the city. The city’s suburbs form an essential part of the area’s economic ecosystem. The 4 closest counties to the city’s 4 most populated boroughs are Westchester County, NY to the north, Nassau County, NY to the east, and Hudson County, NJ and Bergen County, NJ to the west over the Hudson River. The city’s doctors, police officers, custodians, bus drivers, teachers, and bankers often reside in these counties.
 
 This analysis will examine average home sale prices fromm every month from April 1996 to April 2018 to forecast which zip codes have the highest ROI the next 5 years. The projections are for 5 years because that is a typical investment horizon for a PE firm.
 
-#DATA UNDERSTANDING
+# DATA UNDERSTANDING
 
 Zillow kindly provided average home sale data for each month from April 1996 to August 2018 for almost every zip code in the United States. Obviously, that is an immense amount of data. There are some counties with missing information so it’s certainly best to do a narrow search when using this dataset and to understand its limitations. The dataset consists purely of the months and the prices.
 
@@ -27,7 +27,7 @@ The evaluation metric I will use is Root Mean Squared Error(RMSE). RMSE is best 
 
 Out of the 201 zip codes that I examined, only was stationary. Therefore, I tried other transformations. however, none yielded a significant number of stationary zip codes. Therefore, I used pmdarima's auto.arima function. It is Python's version of R's auto.arima. I used auto.arima's default criterion, lowest 'AIC' value. The most common result was (0,2,0) which the data was differenced by a measure of 2. 
 
-#RESULTS
+# RESULTS
 ![image](https://user-images.githubusercontent.com/101752113/184944904-446c461a-dce3-4502-9f3d-c666b0d6c372.png)
 
 According to the model, the top 5 zip codes with the highest ROI% from May 2018 to March 2023 were 10590, 10553, 11804, 10536, and 10504.
@@ -76,6 +76,6 @@ Predicted ROI_percent: 180.919
 
 For each zip code, the predicted value far outstripped both the actual value and the baseline value for the time period. The confidence intervals for each zip code prediction is also very large. In 4 of the zip codes, the confidence intervals veer into negative $ amounts. Also, the difference in RMSE for the baseline model(a shift of 12 months) and the predictions was large. Overall, the wide discrepancy in the RMSE, actual ROI and the predicted ROI and the wide confidence intervals may raise doubts about the efficacy of the model and its predictions.
 
-# Conclusion 
+# CONCLUSION 
 
 However, there may be meaningful reasons for the differences in RMSE, predicted and actual ROI and the wide confidence intervals. The wide confidence intervals are a product of either a small sample or a large degree of variation in the data. I cannot say whether the sample was big enough but the graphs of the prices suggest that the data has a high degree of variation. For each zip code in the dataset, there is a fall around the time of the Great Financial Crash or GFC(circa 2008). The values start to rise again in 2011 and either stabilize or continue to increase. However, the larger trend, from 1996 to 2018, is a significant increase for most of the zip codes. To speculate a bit, the discrepancy evidenced in zip code value in the predicted data and the baseline and original data for the top 5 predicted values may simply be the model anticipating  that the prices will move toward where it might have moved if there had been no Great Financial Crash.
