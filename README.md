@@ -38,24 +38,23 @@ According to the model, the top 5 zip codes with the highest ROI% from May 2018 
 
 
 ## 10590
--Test RMSE for baseline: 56830.818
--Test RMSE for model: 497165.197
--Predicted ROI_percent: 371.188
+* Test RMSE for baseline: 56830.818
+* Test RMSE for model: 497165.197
+* Predicted ROI_percent: 371.188
 ![image](https://user-images.githubusercontent.com/101752113/184945872-fb2547e4-5f49-4a16-94bb-0b9a17e4651b.png)
 
 ## 10553
--Test RMSE for baseline: 36555.793
--Test RMSE for model: 186502.012
--Predicted ROI_percent: 255.495
+* Test RMSE for baseline: 36555.793
+* Test RMSE for model: 186502.012
+* Predicted ROI_percent: 255.495
 
 ![image](https://user-images.githubusercontent.com/101752113/184946137-3193103b-2ce6-482b-9e52-a7496558204a.png)
 
 ## 11804
--Test RMSE for baseline: 36671.901
--Test RMSE for model: 278445.064
--Predicted ROI_percent: 190.459
+* Test RMSE for baseline: 36671.901
+* Test RMSE for model: 278445.064
+* Predicted ROI_percent: 190.459
 
-![image](https://user-images.githubusercontent.com/101752113/184945419-b3d88f4e-c9b3-4d4d-8d95-d5373bb383da.png)
 ![image](https://user-images.githubusercontent.com/101752113/184946409-a84fa348-c290-43f2-95f3-296427956f3d.png)
 
 ## 10536
@@ -67,9 +66,9 @@ According to the model, the top 5 zip codes with the highest ROI% from May 2018 
 ![image](https://user-images.githubusercontent.com/101752113/184946671-22ca5592-e54d-47b6-8998-8eb13b737ea4.png)
 
 ## 10504
--Test RMSE for baseline: 93168.259
--Test RMSE for model: 492617.709
--Predicted ROI_percent: 180.919
+* Test RMSE for baseline: 93168.259
+* Test RMSE for model: 492617.709
+* Predicted ROI_percent: 180.919
 
 ![image](https://user-images.githubusercontent.com/101752113/184947024-15944ed3-f611-414f-ac97-4248d5d6f2dc.png)
 
