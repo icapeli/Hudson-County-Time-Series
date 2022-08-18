@@ -60,9 +60,9 @@ According to the model, the top 5 zip codes with the highest ROI% from May 2018 
 
 ## 10536
 
--Test RMSE for baseline: 50051.282
--Test RMSE for model: 336974.519
--Predicted ROI_percent: 188.629
+* Test RMSE for baseline: 50051.282
+* Test RMSE for model: 336974.519
+* Predicted ROI_percent: 188.629
 
 ![image](https://user-images.githubusercontent.com/101752113/184946671-22ca5592-e54d-47b6-8998-8eb13b737ea4.png)
 
