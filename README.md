@@ -21,16 +21,16 @@ This analysis will examine average home sale prices fromm every month from April
 
 Zillow kindly provided average home sale data for each month from April 1996 to August 2018 for almost every zip code in the United States. Obviously, that is an immense amount of data. There are some counties with missing information so it’s certainly best to do a narrow search when using this dataset and to understand its limitations. The dataset consists purely of the months and the prices.
 
-The evaluation metric I will use is Root Mean Squared Error(RMSE). RMSE is best for this case because RMSE will penalize large error terms. This is important because I want the error metric to be harsh because the predictions need to be as accurate as possible in order for the model to pass muster.
+**The evaluation metric I will use is Root Mean Squared Error(RMSE). RMSE is best for this case because RMSE will penalize large error terms and large outliers. 
 
 # MODELING
 
-Out of the 201 zip codes that I examined, only was stationary. Therefore, I tried other transformations. however, none yielded a significant number of stationary zip codes. Therefore, I used pmdarima's auto.arima function. It is Python's version of R's auto.arima. I used auto.arima's default criterion, lowest 'AIC' value. The most common result was (0,2,0) which the data was differenced by a measure of 2. 
+Out of the 201 zip codes that I examined, only 1 was stationary. Therefore, I tried other transformations. However, none yielded a significant number of stationary zip codes. Therefore, I used pmdarima's auto.arima function. It is Python's version of R's auto.arima. I used auto.arima's default criterion, lowest 'AIC' value. The most common result was (0,2,0) which means the data was differenced by a measure of 2. 
 
 # RESULTS
 ![image](https://user-images.githubusercontent.com/101752113/184944904-446c461a-dce3-4502-9f3d-c666b0d6c372.png)
 
-According to the model, the top 5 zip codes with the highest ROI% from May 2018 to March 2023 were 10590, 10553, 11804, 10536, and 10504.
+**According to the model, the top 5 zip codes with the highest ROI% from May 2018 to March 2023 were 10590, 10553, 11804, 10536, and 10504**.
 
 ![image](https://user-images.githubusercontent.com/101752113/184945073-edd58962-ffd3-4178-a850-0eeb6bdf6efb.png)
 
@@ -73,8 +73,8 @@ According to the model, the top 5 zip codes with the highest ROI% from May 2018 
 ![image](https://user-images.githubusercontent.com/101752113/184947024-15944ed3-f611-414f-ac97-4248d5d6f2dc.png)
 
 
-For each zip code, the predicted value far outstripped both the actual value and the baseline value for the time period. The confidence intervals for each zip code prediction is also very large. In 4 of the zip codes, the confidence intervals veer into negative $ amounts. Also, the difference in RMSE for the baseline model(a shift of 12 months) and the predictions was large. Overall, the wide discrepancy in the RMSE, actual ROI and the predicted ROI and the wide confidence intervals may raise doubts about the efficacy of the model and its predictions.
+For each zip code, the predicted value far outstripped both the actual value and the baseline value for the  prediction time period. The confidence intervals for each zip code prediction is also very large. In 4 of the zip codes, the confidence intervals veer into negative $ amounts. Also, the difference in RMSE for the baseline model(a shift of 12 months) and the predictions was large. Overall, the wide discrepancy in the RMSE, actual ROI and the predicted ROI and the wide confidence intervals may raise doubts about the efficacy of the model and its predictions.
 
 # CONCLUSION 
 
-However, there may be meaningful reasons for the differences in RMSE, predicted and actual ROI and the wide confidence intervals. The wide confidence intervals are a product of either a small sample or a large degree of variation in the data. I cannot say whether the sample was big enough but the graphs of the prices suggest that the data has a high degree of variation. For each zip code in the dataset, there is a fall around the time of the Great Financial Crash or GFC(circa 2008). The values start to rise again in 2011 and either stabilize or continue to increase. However, the larger trend, from 1996 to 2018, is a significant increase for most of the zip codes. To speculate a bit, the discrepancy evidenced in zip code value in the predicted data and the baseline and original data for the top 5 predicted values may simply be the model anticipating  that the prices will move toward where it might have moved if there had been no Great Financial Crash.
+However, there may be meaningful reasons for the differences in RMSE, predicted and actual ROI and the wide confidence intervals. The wide confidence intervals are a product of either a small sample or a large degree of variation in the data. I cannot say whether the sample was big enough but the graphs of the prices suggest that the data has a high degree of variation. For each zip code in the dataset, there is a fall around the time of the Great Financial Crisis or GFC(circa 2008). The values start to rise again in 2011 and either stabilize or continue to increase. However, the larger trend, from 1996 to 2018, is a significant increase for most of the zip codes. To speculate a bit, the discrepancy evidenced in zip code value in the predicted data and the baseline and original data for the top 5 predicted values may simply be the model anticipating  that the prices will move toward where it might have moved if there had been no Great Financial Crisis.
