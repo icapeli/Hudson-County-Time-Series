@@ -41,21 +41,21 @@ Out of the 201 zip codes that I examined, only 1 was stationary. Therefore, I tr
 * Test RMSE for baseline: 56830.818
 * Test RMSE for model: 497165.197
 * Predicted ROI_percent: 371.188
-![image](https://user-images.githubusercontent.com/101752113/184945872-fb2547e4-5f49-4a16-94bb-0b9a17e4651b.png)
+![image](https://user-images.githubusercontent.com/101752113/185803331-1632432e-72dd-4ac1-b640-500795851f73.png)
 
 ## 10553
 * Test RMSE for baseline: 36555.793
 * Test RMSE for model: 186502.012
 * Predicted ROI_percent: 255.495
 
-![image](https://user-images.githubusercontent.com/101752113/184946137-3193103b-2ce6-482b-9e52-a7496558204a.png)
+![image](https://user-images.githubusercontent.com/101752113/185803371-eb6261a2-176c-47d9-a56d-b9e57af27974.png)
 
 ## 11804
 * Test RMSE for baseline: 36671.901
 * Test RMSE for model: 278445.064
 * Predicted ROI_percent: 190.459
 
-![image](https://user-images.githubusercontent.com/101752113/184946409-a84fa348-c290-43f2-95f3-296427956f3d.png)
+![image](https://user-images.githubusercontent.com/101752113/185803403-486d71f3-4b39-48b9-9310-56b370113876.png)
 
 ## 10536
 
@@ -63,15 +63,14 @@ Out of the 201 zip codes that I examined, only 1 was stationary. Therefore, I tr
 * Test RMSE for model: 336974.519
 * Predicted ROI_percent: 188.629
 
-![image](https://user-images.githubusercontent.com/101752113/184946671-22ca5592-e54d-47b6-8998-8eb13b737ea4.png)
+![image](https://user-images.githubusercontent.com/101752113/185803434-a548d708-06b4-44f5-9d3f-1fe18c0ea9c8.png)
 
 ## 10504
 * Test RMSE for baseline: 93168.259
 * Test RMSE for model: 492617.709
 * Predicted ROI_percent: 180.919
 
-![image](https://user-images.githubusercontent.com/101752113/184947024-15944ed3-f611-414f-ac97-4248d5d6f2dc.png)
-
+![image](https://user-images.githubusercontent.com/101752113/185803456-3800901d-75fe-44d3-accd-637ba28a9249.png)
 
 For each zip code, the predicted value far outstripped both the actual value and the baseline value for the  prediction time period. The confidence intervals for each zip code prediction is also very large. In 4 of the zip codes, the confidence intervals veer into negative $ amounts. Also, the difference in RMSE for the baseline model(a shift of 12 months) and the predictions was large. Overall, the wide discrepancy in the RMSE, actual ROI and the predicted ROI and the wide confidence intervals may raise doubts about the efficacy of the model and its predictions.
 
