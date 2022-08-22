@@ -21,7 +21,7 @@ This analysis will examine average home sale prices fromm every month from April
 
 Zillow kindly provided average home sale data for each month from April 1996 to August 2018 for almost every zip code in the United States. Obviously, that is an immense amount of data. There are some counties with missing information so it’s certainly best to do a narrow search when using this dataset and to understand its limitations. The dataset consists purely of the months and the prices.
 
-**The evaluation metric I will use is Root Mean Squared Error(RMSE). RMSE is best for this case because RMSE will penalize large error terms and large outliers. 
+**The evaluation metric I will use is Root Mean Squared Error(RMSE). RMSE is best for this case because RMSE will penalize large error terms and large outliers**. 
 
 # MODELING
 
