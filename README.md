@@ -1,19 +1,19 @@
-# FINDING THE 5 BEST ZIP CODES FOR REAL ESTATE INVESTMENT IN THE NYC SUBURBS
-![image](https://user-images.githubusercontent.com/101752113/184942973-f7bc9ea3-39ca-4a1e-bdaa-8416f10b1748.png)
+# FINDING THE 5 BEST ZIP CODES FOR REAL ESTATE INVESTMENT IN HUDSON COUNTY, NJ
+![image](https://user-images.githubusercontent.com/101752113/188214095-33d3b1e7-56db-44a7-827f-5bd729430e8c.png)
 
 # SUMMARY
-I have been retained in May 2018 by a Private Equity firm looking to expand into the New York City suburbs. In particular, they are targeting 4 of the closest and wealthiest counties in the area: Westchester County, NY to the city’s north, Nassau County, NY to the city’s east, and Bergen County, NJ, and Hudson County, NJ across the Hudson River to the city’s west. They want to know, quite simply, which areas should they invest in? Which areas will have the highest ROI in a 5 year investment horizon? 
+I have been retained in May 2018 by a Private Equity firm looking to expand into the New York City suburbs. In particular, they are targeting Hudson County, NJ across the Hudson River to the city’s west. They want to know, quite simply, which areas should they invest in? Which areas will have the highest ROI in a 5 year investment horizon? 
 
-Using an oustanding dataset from Zillow, the firm hired me to answer those questions. The dataset contains thousands of zip codes from across the country with the mean home sale price for each month from April 1996 to April 2018. I narrow the zip code down to the 201 zip codes in the relevant counties.  The data is clearly non-stationary and transformations have no effect. Splitting the data into an 80-20 train-test split, I define predicted ROI percentage as the last predicted price-the last observed price/ the final obeserved price. That number is then multiplied by 100 to generate a percentage.
+Using an oustanding dataset from Zillow, the firm hired me to answer those questions. The dataset contains thousands of zip codes from across the country with the mean home sale price for each month from April 1996 to April 2018. I narrow the zip code down to the 13 zip codes in the county.  The data is clearly non-stationary and transformations have no effect. Splitting the data into an 80-20 train-test split, I define predicted ROI percentage as the last predicted price-the last observed price/ the final obeserved price. That number is then multiplied by 100 to generate a percentage.
 
 ![image](https://user-images.githubusercontent.com/101752113/184943420-36b5d437-da3b-45bb-b457-4369fc36a0a1.png)
 
-The predicted highest performing zip codes in the next 5 years( May 2018 to March 2023) **were 10590, 10553, 11804,  10536, and 10504**.  However, the RMSE for each is very high, the confidence intervals are very wide, and the predicted values differ greatly from the test data. The differences are wide but may be a product of the Great Financial Crash and the disruption that event caused in the real estate market.
+First, I used pmdarima's auto.arima model but the RMSEs were too high and the confidence intervals were incredibly wide. Then, I employed a SARIMAX model. After grid searching for the optimal parameters (lowest AIC), I obtained results with lower errors although the confidence intervals were still wide. The predicted highest performing zip codes in the next 5 years( May 2018 to March 2023) **were 07029, 07030, 07302, 07032, and 07307. Furthermore, for investors looking for homes at or below 500k, they should target 07029 and 07032**.
 
 
 # BUSINESS UNDERSTANDING
 
-The New York City area real estate market is perhaps the most valuable in the country and is among the most valuable in the world. According to Statista(https://www.statista.com/statistics/815095/new-york-metro-area-population/) , the combined population of the New York metropolitan area is almost 20 million people. When people think of the New York area, they often only think of the city proper consisting of the 5 boroughs of the Bronx, Manhattan, Queens, Brooklyn, and Staten Island. The city's fabled real estate market is lucrative but it’s important for investors to look beyond the city. The city’s suburbs form an essential part of the area’s economic ecosystem. The 4 closest counties to the city’s 4 most populated boroughs are Westchester County, NY to the north, Nassau County, NY to the east, and Hudson County, NJ and Bergen County, NJ to the west over the Hudson River. The city’s doctors, police officers, custodians, bus drivers, teachers, and bankers often reside in these counties.
+The New York City area real estate market is perhaps the most valuable in the country and is among the most valuable in the world. According to Statista(https://www.statista.com/statistics/815095/new-york-metro-area-population/) , the combined population of the New York metropolitan area is almost 20 million people. When people think of the New York area, they often only think of the city proper consisting of the 5 boroughs of the Bronx, Manhattan, Queens, Brooklyn, and Staten Island. The city's fabled real estate market is lucrative but it’s important for investors to look beyond the city. The city’s suburbs form an essential part of the area’s economic ecosystem. Hudson County, NJ is actually the closest suburbs to Midtown and Lower Manhattan and houses not only many of the city's professionals but also the middle and backend offices of many financial institutions.
 
 This analysis will examine average home sale prices fromm every month from April 1996 to April 2018 to forecast which zip codes have the highest ROI the next 5 years. The projections are for 5 years because that is a typical investment horizon for a PE firm.
 
@@ -25,55 +25,38 @@ Zillow kindly provided average home sale data for each month from April 1996 to 
 
 # MODELING
 
-Out of the 201 zip codes that I examined, only 1 was stationary. Therefore, I tried other transformations. However, none yielded a significant number of stationary zip codes. Therefore, I used pmdarima's auto.arima function. It is Python's version of R's auto.arima. I used auto.arima's default criterion, lowest 'AIC' value. The most common result was (0,2,0) which means the data was differenced by a measure of 2. 
+Out of the 13 zip codes that I examined, only 1 was stationary. Therefore, I tried other transformations. However, none yielded a significant number of stationary zip codes. Therefore, I used pmdarima's auto.arima function. It is Python's version of R's auto.arima. I used auto.arima's default criterion, lowest 'AIC' value. The most common result was (0,2,0) which means the data was differenced by a measure of 2. Unfortunately, the errors here were too large and the confidence intervals too wide. Therefore, I used a SARIMAX model and was able to obtain more reliable results.
 
 # RESULTS
-![image](https://user-images.githubusercontent.com/101752113/184944904-446c461a-dce3-4502-9f3d-c666b0d6c372.png)
 
-**According to the model, the top 5 zip codes with the highest ROI% from May 2018 to March 2023 were 10590, 10553, 11804, 10536, and 10504**.
+![image](https://user-images.githubusercontent.com/101752113/188214095-33d3b1e7-56db-44a7-827f-5bd729430e8c.png)
+![image](https://user-images.githubusercontent.com/101752113/188215334-52100b8b-1d63-4465-bb59-c75dc235fc94.png)
+
+**According to the model, the top 5 zip codes with the highest ROI% from May 2018 to March 2023 were 07029, 07030, 07302, 07032, and 07307**.
 
 ![image](https://user-images.githubusercontent.com/101752113/184945073-edd58962-ffd3-4178-a850-0eeb6bdf6efb.png)
 
 # EVALUATION
 
 
-## 10590
-* Test RMSE for baseline: 56830.818
-* Test RMSE for model: 497165.197
-* Predicted ROI_percent: 371.188
-![image](https://user-images.githubusercontent.com/101752113/185803331-1632432e-72dd-4ac1-b640-500795851f73.png)
+## 07029
+![image](https://user-images.githubusercontent.com/101752113/188215638-b4f1ea63-3af3-430b-a45b-9b4eadbcfee0.png)
 
-## 10553
-* Test RMSE for baseline: 36555.793
-* Test RMSE for model: 186502.012
-* Predicted ROI_percent: 255.495
+## 07030
+![image](https://user-images.githubusercontent.com/101752113/188215772-41b0e0f5-b05a-407f-ac85-f19e115a0ca4.png)
 
-![image](https://user-images.githubusercontent.com/101752113/185803371-eb6261a2-176c-47d9-a56d-b9e57af27974.png)
+## 07302
+![image](https://user-images.githubusercontent.com/101752113/188215921-d77d5622-26e4-4c63-9164-f472b4ded374.png)
 
-## 11804
-* Test RMSE for baseline: 36671.901
-* Test RMSE for model: 278445.064
-* Predicted ROI_percent: 190.459
+## 07032
 
-![image](https://user-images.githubusercontent.com/101752113/185803403-486d71f3-4b39-48b9-9310-56b370113876.png)
+![image](https://user-images.githubusercontent.com/101752113/188216014-cb2adb02-d041-4aae-a891-1251f9c020b3.png)
 
-## 10536
+## 07307
+![image](https://user-images.githubusercontent.com/101752113/188216107-e3bac9f1-26c4-413b-91aa-91dd284bbe32.png)
 
-* Test RMSE for baseline: 50051.282
-* Test RMSE for model: 336974.519
-* Predicted ROI_percent: 188.629
-
-![image](https://user-images.githubusercontent.com/101752113/185803434-a548d708-06b4-44f5-9d3f-1fe18c0ea9c8.png)
-
-## 10504
-* Test RMSE for baseline: 93168.259
-* Test RMSE for model: 492617.709
-* Predicted ROI_percent: 180.919
-
-![image](https://user-images.githubusercontent.com/101752113/185803456-3800901d-75fe-44d3-accd-637ba28a9249.png)
-
-For each zip code, the predicted value far outstripped both the actual value and the baseline value for the  prediction time period. The confidence intervals for each zip code prediction is also very large. In 4 of the zip codes, the confidence intervals veer into negative $ amounts. Also, the difference in RMSE for the baseline model(a shift of 12 months) and the predictions was large. Overall, the wide discrepancy in the RMSE, actual ROI and the predicted ROI and the wide confidence intervals may raise doubts about the efficacy of the model and its predictions.
+Each zip code has a positive ROI%. The RMSEs are better than the auto.arima model and, for some of the zip codes, are actually quite low. An objection may be raised to the fact that the confidence intervals are wide and even sink into the negative $ amounts for each zip code.
 
 # CONCLUSION 
 
-However, there may be meaningful reasons for the differences in RMSE, predicted and actual ROI and the wide confidence intervals. The wide confidence intervals are a product of either a small sample or a large degree of variation in the data. I cannot say whether the sample was big enough but the graphs of the prices suggest that the data has a high degree of variation. For each zip code in the dataset, there is a fall around the time of the Great Financial Crisis or GFC(circa 2008). The values start to rise again in 2011 and either stabilize or continue to increase. However, the larger trend, from 1996 to 2018, is a significant increase for most of the zip codes. To speculate a bit, the discrepancy evidenced in zip code value in the predicted data and the baseline and original data for the top 5 predicted values may simply be the model anticipating  that the prices will move toward where it might have moved if there had been no Great Financial Crisis.
+However, there may be meaningful reasons the wide confidence intervals. The wide confidence intervals are a product of either a small sample or a large degree of variation in the data. I cannot say whether the sample was big enough but the graphs of the prices suggest that the data has a high degree of variation. For each zip code in the dataset, there is a fall around the time of the Great Financial Crisis or GFC(circa 2008). The values start to rise again in 2011 and either stabilize or continue to increase. However, the larger trend, from 1996 to 2018, is a significant increase for most of the zip codes. To speculate a bit, the discrepancy evidenced in zip code value in the predicted data and the baseline and original data for the top 5 predicted values may simply be the model anticipating  that the prices will move toward where it might have moved if there had been no Great Financial Crisis. While I could I have used a truncated dataset that began after the GFC, I decided to include the GFC and pre-GFC data because this area is very tied to Wall Street so omitting that data would be doing investors a disservice. 
