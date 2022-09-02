@@ -60,3 +60,8 @@ Each zip code has a positive ROI%. The RMSEs are better than the auto.arima mode
 # CONCLUSION 
 
 However, there may be meaningful reasons the wide confidence intervals. The wide confidence intervals are a product of either a small sample or a large degree of variation in the data. I cannot say whether the sample was big enough but the graphs of the prices suggest that the data has a high degree of variation. For each zip code in the dataset, there is a fall around the time of the Great Financial Crisis or GFC(circa 2008). The values start to rise again in 2011 and either stabilize or continue to increase. However, the larger trend, from 1996 to 2018, is a significant increase for most of the zip codes. To speculate a bit, the discrepancy evidenced in zip code value in the predicted data and the baseline and original data for the top 5 predicted values may simply be the model anticipating  that the prices will move toward where it might have moved if there had been no Great Financial Crisis. While I could I have used a truncated dataset that began after the GFC, I decided to include the GFC and pre-GFC data because this area is very tied to Wall Street so omitting that data would be doing investors a disservice. 
+
+# NEXT STEPS
+- An updated dataset that extends to 2022 would obviously be useful and would possibly generate more accurate predictions. It would also be interesting to see how a model would account for the COVID pandemic.
+- More data on 07304 and 07310 would also be very useful to investors and to the model. Unfortunately, the Zillow dataset omitted these zip codes. 
+- Lastly, another ML model may yield more fruitful results. An XGBoost Regressor or a neural network model may yield better and more meaningful results.
