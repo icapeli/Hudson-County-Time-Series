@@ -66,7 +66,7 @@ However, there may be meaningful reasons for the wide confidence intervals. The 
 - More data on 07304 and 07310 would also be very useful to investors and to the model. Unfortunately, the Zillow dataset omitted these zip codes. 
 - Lastly, another ML model may yield more fruitful results. An XGBoost Regressor or a neural network model may yield better and more meaningful results.
 
-
+# REPOSITORY STRUCTURE
 ```bash
 ├── Data
 │   ├── zipcodes.json
