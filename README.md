@@ -66,19 +66,25 @@ However, there may be meaningful reasons for the wide confidence intervals. The 
 - More data on 07304 and 07310 would also be very useful to investors and to the model. Unfortunately, the Zillow dataset omitted these zip codes. 
 - Lastly, another ML model may yield more fruitful results. An XGBoost Regressor or a neural network model may yield better and more meaningful results.
 
-'''
-+---.ipynb_checkpoints
-+---hudson county
-|   \---Data
-+---images
-+---README.md - Jupyter Text Editor_files
-\---time-series
-    +---.ipynb_checkpoints
-    +---ds-time_series_modeling_walkthrough-gfc33
-    |   +---.ipynb_checkpoints
-    |   +---data
-    |   \---img
-    \---phase_4
-'''
-  
+
+```bash
+├── app
+│   ├── css
+│   │   ├── **/*.css
+│   ├── favicon.ico
+│   ├── images
+│   ├── index.html
+│   ├── js
+│   │   ├── **/*.js
+│   └── partials/template
+├── dist (or build)
+├── node_modules
+├── bower_components (if using bower)
+├── test
+├── Gruntfile.js/gulpfile.js
+├── README.md
+├── package.json
+├── bower.json (if using bower)
+└── .gitignore
+```
 
