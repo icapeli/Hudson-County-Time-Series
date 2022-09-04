@@ -73,7 +73,7 @@ However, there may be meaningful reasons for the wide confidence intervals. The 
 │   ├── zillow_data.csv 
 │   ├── zipcodes.json
 ├── .gitignore
+├── README.md 
+├── phase_4_presentation.pdf
 ├── phase_4_project.ipynb
-├── phase_4_v2.pdf
-├── README.md
 ```
