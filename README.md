@@ -68,23 +68,11 @@ However, there may be meaningful reasons for the wide confidence intervals. The 
 
 
 ```bash
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
+├── Data
+│   ├── zipcodes.json
+├── .gitignore
+├── phase_4_project.ipynb
+├── phase_4_v2.pdf
 ├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
 ```
 
