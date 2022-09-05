@@ -68,7 +68,7 @@ However, there may be meaningful reasons for the wide confidence intervals. The 
 # REPOSITORY STRUCTURE
 
 ```bash
-├── app
+├── Data
 │   ├── zillow_data.csv 
 │   ├── zipcodes.json
 ├── .gitignore
