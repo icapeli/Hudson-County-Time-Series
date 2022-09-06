@@ -34,7 +34,6 @@ Out of the 13 zip codes that I examined, only 1 was stationary. Therefore, I tri
 
 **According to the model, the top 5 zip codes with the highest ROI% from May 2018 to March 2023 were 07029, 07030, 07302, 07032, and 07307**.
 
-![image](https://user-images.githubusercontent.com/101752113/184945073-edd58962-ffd3-4178-a850-0eeb6bdf6efb.png)
 
 # EVALUATION
 
